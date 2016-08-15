@@ -468,9 +468,11 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### making a dataframe that only have NASA data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Makes a dataframe that only has NASA data. </span>
+<span class="c1">### This was done by selecting for NN in the agency column.</span>
 <span class="n">NASA</span> <span class="o">=</span> <span class="n">fevs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">fevs</span><span class="p">[</span><span class="s1">&#39;agency&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;NN&quot;</span><span class="p">]</span>
-<span class="c1">## using the same describe function as above:</span>
+<span class="c1">## Using the same describe function as above, some basic stats are generated for the columns that the function can handle.</span>
+<span class="c1">## It can not calculate all columns.</span>
 <span class="n">NASA</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
@@ -738,7 +740,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-rest-of-the-Jupyter-notebook-is-data-exploration:">The rest of the Jupyter notebook is data exploration:<a class="anchor-link" href="#The-rest-of-the-Jupyter-notebook-is-data-exploration:">&#182;</a></h3>
+<h2 id="The-rest-of-the-Jupyter-notebook-is-data-exploration:">The rest of the Jupyter notebook is data exploration:<a class="anchor-link" href="#The-rest-of-the-Jupyter-notebook-is-data-exploration:">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -797,8 +799,8 @@ Name: Q72, dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-73-is:">Question 73 is:<a class="anchor-link" href="#Question-73-is:">&#182;</a></h3><p>Please select the response below that BEST describes your current teleworking situation.
-   1.)I telework<br>
+<h3 id="Question-73-is:">Question 73 is:<a class="anchor-link" href="#Question-73-is:">&#182;</a></h3><p>Please select the response below that BEST describes your current teleworking situation.</p>
+<p>1.)I telework<br>
    2.)I do not telework because I am unable<br>
    3.)I do not telework because I choose not to</p>
 <p>if question was left blank, a X is put in the cell.</p>
@@ -839,6 +841,15 @@ Name: Q73, dtype: int64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-crosstabs-plot-lets-you-see-how-the-answers-to-two-questions-correlate.">A crosstabs plot lets you see how the answers to two questions correlate.<a class="anchor-link" href="#A-crosstabs-plot-lets-you-see-how-the-answers-to-two-questions-correlate.">&#182;</a></h3><h6 id="&quot;All&quot;-here-refers-to-the-total-of-all-answers-for-that-category.-Ignore-the-&quot;ALL&quot;-&quot;ALL&quot;-box-in-bottom-right-if-it-is-confusing.">"All" here refers to the total of all answers for that category. Ignore the "ALL" "ALL" box in bottom right if it is confusing.<a class="anchor-link" href="#&quot;All&quot;-here-refers-to-the-total-of-all-answers-for-that-category.-Ignore-the-&quot;ALL&quot;-&quot;ALL&quot;-box-in-bottom-right-if-it-is-confusing.">&#182;</a></h6>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -933,7 +944,7 @@ Name: Q73, dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>interesting observation from the crosstab figure above is 99 people selected #2 for Q72, saying they have been informed they are eligiable for telework, but also selected #1 for Q72, saying they teleworked?</li>
+<li>interesting observation from the crosstab figure above is 99 people selected #2 for Q72, saying they have been informed they are ineligiable for telework, but also selected #1 for Q72, saying they teleworked?</li>
 </ul>
 
 </div>
@@ -945,7 +956,7 @@ Name: Q73, dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>most people fall into the I have been informed &amp; I telework category. </li>
+<li>most people fall into the "I have been informed" &amp; "I telework" category, or answer 1 &amp; 1. </li>
 </ul>
 
 </div>
@@ -1400,7 +1411,7 @@ Name: Q73, dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In terms of question 72 (whether you were informed about your telework options and what they were) and quesiton 65 (recognition), the only result that stands out is that people who weren't sure whether or not they were informed score lowest on the recognition question, (65).</p>
+<p>In terms of question 72 (whether you were informed about your telework options and what they were) and quesiton 65 (recognition), the only result that stands out is that people who knew  they were not informed of their elegibility for telework scored lowest on the recognition question, (65).</p>
 
 </div>
 </div>
@@ -1420,7 +1431,8 @@ Name: Q73, dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the two figures below, question 65 (How satisfied are you with the recognition you receive for doing a good job?) is plotted on the X axis</p>
-<p>The percent that responded to each answer is the y-axis, which each line representing a response group for question 72 or 73, depending on the plot.</p>
+<p>The percent that responded to each answer in question 65 is the y-axis.</p>
+<p>Each line represents a response group for question 72 or 73, depending on the plot.</p>
 
 </div>
 </div>
@@ -1965,6 +1977,7 @@ kiRJCpoMJpIkSVLQZDCRJEmSgvb/A5JnR/SXkzbQAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Each line = a response group for question 72</p>
+<p>Yellow line = Answer 3.)No, I was not notified of my telework eligibility.</p>
 
 </div>
 </div>
@@ -2400,7 +2413,8 @@ kzARQgiRMAkTIYQQCZMwEUIIkTAJEyGEEAmTMBFCCJGw/wdeRjbpecUH6wAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each line = a response group for question 72</p>
+<p>Each line = a response group for question 73</p>
+<p>Yellow line = Answer 3.)I do not telework because I choose not to</p>
 
 </div>
 </div>
@@ -2479,7 +2493,7 @@ kzARQgiRMAkTIYQQCZMwEUIIkTAJEyGEEAmTMBFCCJGw/wdeRjbpecUH6wAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Next-Figure-=-Heatmap,-using-the-seaborn-library">Next Figure = Heatmap, using the seaborn library<a class="anchor-link" href="#Next-Figure-=-Heatmap,-using-the-seaborn-library">&#182;</a></h2><h5 id="Darker-colors-corrlate-more-higher.">Darker colors corrlate more higher.<a class="anchor-link" href="#Darker-colors-corrlate-more-higher.">&#182;</a></h5><h5 id="There-is-a-1:1-line-that-goes-down-the-center-that-effectively-compares-the-responses-of-one-question-to-itself.">There is a 1:1 line that goes down the center that effectively compares the responses of one question to itself.<a class="anchor-link" href="#There-is-a-1:1-line-that-goes-down-the-center-that-effectively-compares-the-responses-of-one-question-to-itself.">&#182;</a></h5><h4 id="Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-to-direct-further-investigation">Note: this isn't something to use to make conclusions but rather to direct further investigation<a class="anchor-link" href="#Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-to-direct-further-investigation">&#182;</a></h4>
+<h2 id="Next-Figure-=-Heatmap,-using-the-seaborn-library">Next Figure = Heatmap, using the seaborn library<a class="anchor-link" href="#Next-Figure-=-Heatmap,-using-the-seaborn-library">&#182;</a></h2><h5 id="Darker-colors-corrlate-more-higher.">Darker colors corrlate more higher.<a class="anchor-link" href="#Darker-colors-corrlate-more-higher.">&#182;</a></h5><h5 id="There-is-a-1:1-line-that-goes-down-the-center-that-effectively-compares-the-responses-of-one-question-to-itself.">There is a 1:1 line that goes down the center that effectively compares the responses of one question to itself.<a class="anchor-link" href="#There-is-a-1:1-line-that-goes-down-the-center-that-effectively-compares-the-responses-of-one-question-to-itself.">&#182;</a></h5><h4 id="Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-a-quick-test-to-see-if-it-might-be-useful-for--directing-further-investigation.">Note: this isn't something to use to make conclusions but rather a quick test to see if it might be useful for  directing further investigation.<a class="anchor-link" href="#Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-a-quick-test-to-see-if-it-might-be-useful-for--directing-further-investigation.">&#182;</a></h4><h3 id="For-telework-purposes,-probably-not-useful.">For telework purposes, probably not useful.<a class="anchor-link" href="#For-telework-purposes,-probably-not-useful.">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -3040,7 +3054,7 @@ IiIi6oSDRCIiIiLqhINEIiIiIuqEg0QiIiIi6uT/A3z2pc3zh6wqAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The shift from blue to red around the question 71/72 boundary is most likely related to a shift in the number of possible answers.</p>
-<h4 id="Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-to-direct-further-investigation">Note: this isn't something to use to make conclusions but rather to direct further investigation<a class="anchor-link" href="#Note:-this-isn't-something-to-use-to-make-conclusions-but-rather-to-direct-further-investigation">&#182;</a></h4>
+
 </div>
 </div>
 </div>
